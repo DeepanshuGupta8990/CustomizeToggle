@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#body {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background: #292929;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
+input[type='checkbox']{
+    position: relative;
+    width: 120px;
+    height: 40px;
+    -webkit-appearance: none;
+    background: linear-gradient(0deg, #333, #000);
+    outline: none;
+    border-radius: 20px;
+    box-shadow: 0 0 0 4px #353535,
+                0 0 0 5px #3e3e3e,
+                inset 0 0 10px rgba(0,0,0,0.5),
+                0 5px 20px rgba(0,0,0,0.5),
+                inset 0 0 15px rgba(0,0,0,0.2);
+    transition: all 0.5s ease;
+}
+input[type='checkbox']::before{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(0deg, #000, #6b6b6b);
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 1px #232323;
+    transform: scale(0.98,0.96);
+    transition: .5s ease;
+}
+input:checked[type='checkbox']::before{
+  left: 40px;
+}
+input[type='checkbox']::after{
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 70px;
+    width: 4px;
+    height: 4px;  
+    background: linear-gradient(0deg, #6b6b6b,#000);
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+input:checked[type='checkbox']::after{
+  left: 105px;
+  background: cyan;
+  box-shadow: 0 0 5px #13b3ff, 0 0 15px #13b3ff;
+}
+input:checked[type='checkbox']{
+    background: linear-gradient(0deg, #6dd1ff, #20b7ff);
+    /* box-shadow: 0 0 0 4px #353535,
+    0 0 0 5px #3e3e3e,
+    inset 0 0 10px rgba(0,0,0,0.5),
+    0 5px 20px rgba(0,0,0,0.5),
+    0 0 20px 0.5px cyan; */
+}
+@keyframes sunAnimation {
+    0% {
+      transform: translateY(-100px) scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100px) scale(1);
+      opacity: 1;
+    }
+  }
+  .sun{
+      position: absolute;
+      top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    transition: 1.5s ease;
+  }
+  
+  .sunanimation {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    /* background-color: #f9ca0d; */
+    /* border-radius: 50%; */
+    /* animation: sunAnimation 1.5s ease-in-out forwards; */
+    transform: translateY(100px) scale(1);
+    opacity: 1;
+    z-index: 1;
+  }
